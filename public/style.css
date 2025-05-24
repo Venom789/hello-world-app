@@ -1,17 +1,49 @@
-/* public/style.css */
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
-  padding-top: 50px;
+  margin: 40px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1 {
+  color: #2c3e50;
 }
 
 button {
   padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
   font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
 }
 
 #response {
-  margin-top: 20px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
+#configOutput {
+  margin-top: 20px;
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  max-width: 500px;
+}
+
+#configOutput p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+strong {
+  color: #2c3e50;
+}
