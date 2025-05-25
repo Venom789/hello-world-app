@@ -18,7 +18,7 @@ app.get('/api/config', (req, res) => {
   res.json({
     dbUser: process.env.DB_USER,
     apiKey: process.env.API_KEY,
-    connectionString: process.env.CONNECTIONSTRINGS_DB_CONNECTION_STRING_PROD
+    connectionString: process.env.CONNECTIONSTRINGS__DB_CONNECTION_STRING_PROD
   });
 });
 
