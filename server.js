@@ -1,6 +1,7 @@
 // server.js
 const express = require('express');
 const path = require('path');
+const axios = require('axios');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,6 +22,17 @@ app.get('/api/config', (req, res) => {
     connectionString: process.env.CONNECTIONSTRINGS__DB_CONNECTION_STRING_PROD
   });
 });
+
+app.get('/proxy/tls', async (req, res) => {
+  try {
+    const response = await axios.get('https://tls-production-6c42.up.railway.app/tls');
+    res.send(response.data);
+  } catch (error) {
+    console.error('Error calling TLS API:', error.message);
+    res.status(500).send('Failed to fetch TLS API.');
+  }
+});
+
 
 // Start server
 app.listen(PORT, () => {

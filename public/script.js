@@ -23,3 +23,21 @@ document.getElementById('configBtn').addEventListener('click', () => {
     });
 });
 
+// Handle TLS API call
+const tlsBtn = document.getElementById('callTlsBtn');
+if (tlsBtn) {
+  tlsBtn.addEventListener('click', async () => {
+    const output = document.getElementById('tlsResponse');
+    output.innerText = 'Loading...';
+
+    try {
+      const res = await fetch('/proxy/tls'); // ← Call your backend proxy
+      const data = await res.text();         // Use .json() if it's JSON
+      output.innerText = data;
+    } catch (err) {
+      console.error(err);
+      output.innerText = 'Failed to fetch TLS API.';
+    }
+  });
+}
+
